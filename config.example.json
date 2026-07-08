@@ -1,0 +1,40 @@
+{
+  "_descricao": "Example configuration file for NFe DestSync. Copy this file, rename it to config.json, and replace all example values with your own company data.",
+  "_importante": [
+    "Do not commit your real config.json to GitHub.",
+    "Use only digits in CNPJ fields, without dots, slashes or hyphens.",
+    "EmpresaDestino defines the company that will replace the NF-e dest block.",
+    "EmpresasValidas defines which original recipient companies are allowed to be converted.",
+    "If the original recipient CNPJ is not listed in EmpresasValidas, the XML will not be changed."
+  ],
+  "Versao": 1,
+  "Destino": "DESTINATION_ALIAS",
+  "CriarBackup": false,
+  "SobrescreverConvertidos": false,
+  "GerarLogCsv": true,
+  "EmpresasValidas": {
+    "00000000000000": "SOURCE COMPANY ONE LTDA",
+    "11111111111111": "SOURCE COMPANY TWO LTDA",
+    "22222222222222": "SOURCE COMPANY THREE LTDA"
+  },
+  "EmpresaDestino": {
+    "CNPJ": "11111111111111",
+    "xNome": "DESTINATION COMPANY LTDA",
+    "enderDest": {
+      "xLgr": "STREET NAME",
+      "nro": "123",
+      "xCpl": "COMPLEMENT",
+      "xBairro": "DISTRICT",
+      "cMun": "0000000",
+      "xMun": "CITY",
+      "UF": "SP",
+      "CEP": "00000000",
+      "cPais": "1058",
+      "xPais": "Brasil",
+      "fone": "0000000000"
+    },
+    "indIEDest": "1",
+    "IE": "000000000000",
+    "email": "email@example.com"
+  }
+}
