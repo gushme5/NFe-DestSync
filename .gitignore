@@ -1,5 +1,35 @@
-# Real local configuration with private company data
+# Private local configuration with real company data
 config.json
 
 # Keep only the public example configuration
 !config.example.json
+
+# Compiled executable
+*.exe
+
+# Runtime XML folders - do not upload real XML files
+XML/Entrada/*
+XML/Convertidos/*
+XML/Processados/*
+XML/Backup/*
+
+# Logs - do not upload generated CSV logs
+Logs/*
+
+# Keep empty folder structure on GitHub
+!XML/Entrada/.gitkeep
+!XML/Convertidos/.gitkeep
+!XML/Processados/.gitkeep
+!XML/Backup/.gitkeep
+!Logs/.gitkeep
+
+# Windows files
+Thumbs.db
+Desktop.ini
+
+# VS Code local settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
