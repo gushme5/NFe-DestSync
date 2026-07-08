@@ -12,7 +12,7 @@ It was created to reduce manual XML editing, avoid import errors, and standardiz
 
 ## Important Privacy Notice
 
-This repository is designed to be public-safe.
+This repository is intended to be safe for public sharing.
 
 Do not commit private or real company data, such as:
 
@@ -25,7 +25,7 @@ Do not commit private or real company data, such as:
 * Real company emails
 * Real CSV logs
 * Local `config.json` files
-* Compiled `.exe` files, unless intentionally published in a private release
+* Compiled `.exe` files should not be committed directly to the repository. If needed, publish them as release assets in the GitHub Releases section.
 
 The repository should include only:
 
@@ -97,7 +97,7 @@ Expected structure:
 ```text
 NFeDestSync/
 │
-├── ConverterXML.ps1
+├── NFeDestSync.ps1
 ├── config.example.json
 ├── README.md
 ├── .gitignore
@@ -287,13 +287,13 @@ Run the executable or PowerShell script.
 Executable:
 
 ```powershell
-.\ConverterXML.exe
+.\NFeDestSync.exe
 ```
 
 PowerShell script:
 
 ```powershell
-.\ConverterXML.ps1
+.\NFeDestSync.ps1
 ```
 
 ### Step 3
@@ -312,13 +312,13 @@ After processing:
 Before running the actual conversion, use Dry Run mode:
 
 ```powershell
-.\ConverterXML.exe -DryRun
+.\NFeDestSync.exe -DryRun
 ```
 
 or:
 
 ```powershell
-.\ConverterXML.ps1 -DryRun
+.\NFeDestSync.ps1 -DryRun
 ```
 
 In Dry Run mode, the program:
@@ -344,13 +344,13 @@ Dry Run mode is recommended before processing large batches.
 To process files for real, run:
 
 ```powershell
-.\ConverterXML.exe
+.\NFeDestSync.exe
 ```
 
 or:
 
 ```powershell
-.\ConverterXML.ps1
+.\NFeDestSync.ps1
 ```
 
 The program will:
@@ -492,15 +492,15 @@ Always keep the original XML files.
 The source code is:
 
 ```text
-ConverterXML.ps1
+NFeDestSync.ps1
 ```
 
 To generate the executable again, open PowerShell in the root folder and run:
 
 ```powershell
 Invoke-ps2exe `
-  -inputFile .\ConverterXML.ps1 `
-  -outputFile .\ConverterXML.exe `
+  -inputFile .\NFeDestSync.ps1 `
+  -outputFile .\NFeDestSync.exe `
   -noConsole:$false `
   -title "NFe DestSync" `
   -description "NF-e XML destination block synchronization tool" `
@@ -514,7 +514,7 @@ If the executable is open, close it before recompiling.
 If needed, remove the old executable first:
 
 ```powershell
-Remove-Item .\ConverterXML.exe -Force
+Remove-Item .\NFeDestSync.exe -Force
 ```
 
 Then run the `Invoke-ps2exe` command again.
@@ -528,14 +528,14 @@ Then run the `Invoke-ps2exe` command again.
 3. Run:
 
 ```powershell
-.\ConverterXML.exe -DryRun
+.\NFeDestSync.exe -DryRun
 ```
 
 4. Check the summary and logs.
 5. If everything looks correct, run:
 
 ```powershell
-.\ConverterXML.exe
+.\NFeDestSync.exe
 ```
 
 6. Import the files from `XML/Convertidos` into your ERP system.
