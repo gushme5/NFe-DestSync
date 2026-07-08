@@ -1,0 +1,74 @@
+{
+    "_descricao": "Example configuration file for NFe DestSync. Copy this file, rename it to config.json, and replace all example values with your company data.",
+    "_importante": [
+        "Do not commit your real config.json to GitHub.",
+        "Use only digits in CNPJ fields, without dots, slashes or hyphens.",
+        "EmpresaDestino defines the company that will replace the NF-e dest block.",
+        "EmpresasValidas defines which original recipient companies are allowed to be converted.",
+        "If the original recipient CNPJ is not listed in EmpresasValidas, the XML will not be changed."
+    ],
+    "Versao": 1,
+    "Destino": "DESTINATION_ALIAS",
+    "CriarBackup": false,
+    "SobrescreverConvertidos": false,
+    "GerarLogCsv": true,
+    "_configuracoes": {
+        "CriarBackup": "false = does not create an extra copy in XML/Backup. The original file is moved to XML/Processados.",
+        "SobrescreverConvertidos": "false = never overwrites converted files. If the name already exists, the program creates (1), (2), etc.",
+        "GerarLogCsv": "true = creates daily CSV logs inside the Logs folder."
+    },
+    "_como_configurar_empresas_validas": {
+        "explicacao": "List all CNPJs that the tool can accept as the original NF-e recipient.",
+        "formato": "Use CNPJ without punctuation as the key and the company legal name as the value.",
+        "exemplo": {
+            "00000000000000": "SOURCE COMPANY LTDA"
+        }
+    },
+    "EmpresasValidas": {
+        "00000000000000": "SOURCE COMPANY ONE LTDA",
+        "11111111111111": "SOURCE COMPANY TWO LTDA",
+        "22222222222222": "SOURCE COMPANY THREE LTDA"
+    },
+    "_como_configurar_empresa_destino": {
+        "explicacao": "Fill in the full destination company data. This data will be used to build the new NF-e dest block.",
+        "CNPJ": "Destination company CNPJ, digits only.",
+        "xNome": "Full legal name of the destination company.",
+        "enderDest": "Full destination address following the NF-e structure.",
+        "indIEDest": "Recipient state registration indicator. Usually 1 when the company has state registration.",
+        "IE": "Destination company state registration number.",
+        "email": "Email that will be written into the dest block."
+    },
+    "EmpresaDestino": {
+        "CNPJ": "11111111111111",
+        "xNome": "DESTINATION COMPANY LTDA",
+        "enderDest": {
+            "xLgr": "STREET NAME",
+            "nro": "123",
+            "xCpl": "COMPLEMENT",
+            "xBairro": "DISTRICT",
+            "cMun": "0000000",
+            "xMun": "CITY",
+            "UF": "SP",
+            "CEP": "00000000",
+            "cPais": "1058",
+            "xPais": "Brasil",
+            "fone": "0000000000"
+        },
+        "indIEDest": "1",
+        "IE": "000000000000",
+        "email": "email@example.com"
+    },
+    "_referencia_campos_endereco": {
+        "xLgr": "Street name",
+        "nro": "Address number",
+        "xCpl": "Address complement",
+        "xBairro": "District",
+        "cMun": "IBGE city code",
+        "xMun": "City name",
+        "UF": "State abbreviation",
+        "CEP": "Postal code, digits only",
+        "cPais": "Country code. For Brazil, usually 1058.",
+        "xPais": "Country name",
+        "fone": "Phone number, digits only"
+    }
+}
