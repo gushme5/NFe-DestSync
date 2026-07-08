@@ -1,0 +1,27 @@
+# Executable generated from ps2exe
+*.exe
+
+# Runtime XML folders - do not upload company XML files
+XML/Entrada/*
+XML/Convertidos/*
+XML/Processados/*
+XML/Backup/*
+Logs/*
+
+# Keep empty folder structure in GitHub
+!XML/Entrada/.gitkeep
+!XML/Convertidos/.gitkeep
+!XML/Processados/.gitkeep
+!XML/Backup/.gitkeep
+!Logs/.gitkeep
+
+# Windows files
+Thumbs.db
+Desktop.ini
+
+# VS Code local settings
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
